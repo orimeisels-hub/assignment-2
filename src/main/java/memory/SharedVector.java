@@ -134,6 +134,9 @@ public class SharedVector {
             if (matrix.getOrientation() != VectorOrientation.COLUMN_MAJOR) {
                 throw new IllegalArgumentException("vecMatMul supports only COLUMN_MAJOR matrices");
             }
+            if (matrix.length() ==0 ) {
+                throw new IllegalArgumentException("matrix is empty");
+            }
             if (matrix.get(0).length() != length()) {
                 throw new IllegalArgumentException("the multuply is not definded");
             }
